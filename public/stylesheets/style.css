@@ -1,0 +1,30 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+a {
+  color: #00B7FF; }
+
+#resultTable {
+  margin: 10px auto 20px auto;
+  width: 50%; }
+  #resultTable td {
+    text-align: center; }
+  #resultTable th {
+    text-align: center; }
+
+.is-centered {
+  margin: 0 auto; }
+
+#form {
+  padding: 10px;
+  width: 50%;
+  border: rgba(204, 204, 204, 0.26) 1px solid;
+  border-radius: 5px; }
+
+#error {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 50%; }
+
+/*# sourceMappingURL=style.css.map */

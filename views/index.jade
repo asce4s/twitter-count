@@ -1,0 +1,44 @@
+extends layout
+
+block content
+
+
+    form.is-centered#form(method='POST' action='/twitter')
+        div.field
+            label.label TwitterHandle
+            div.control
+                input.input(type='text', name='handle', required=true)
+        div.field
+            label.label Number
+            div.control
+                input.input(type='count', name='count', required=true)
+
+        div.field
+            div.control
+                button.button.is-link(type='submit') Search
+
+
+    if(wordcount && !wordcount.error)
+        section.section
+            h1.has-text-centered.title Top keywords of @#{handle}
+
+            table.table.table.is-striped#resultTable
+                thead
+                    tr
+                        th Keyword
+                        th Count
+
+                tbody
+                    if (wordcount.data.length)
+                        each obj in wordcount.data
+                            tr
+                                td=obj.word
+                                td=obj.count
+
+
+
+            p.is-size-6.has-text-centered.has-text-weight-bold Processing time #{processTime}
+
+    else if(wordcount && wordcount.error)
+        div.notification.is-danger.has-text-centered.is-centered#error=wordcount.errorMsg.toString()
+
