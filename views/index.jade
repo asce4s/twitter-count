@@ -2,16 +2,17 @@ extends layout
 
 block content
 
+    h1.title.has-text-centered  Twitter Stats
 
     form.is-centered#form(method='POST' action='/twitter')
         div.field
-            label.label TwitterHandle
+            label.label Twitter Handler
             div.control
                 input.input(type='text', name='handle', required=true)
         div.field
-            label.label Number
+            label.label Tweets to Process
             div.control
-                input.input(type='count', name='count', required=true)
+                input.input(type='number', name='count', required=true ,min=0,max=200)
 
         div.field
             div.control
